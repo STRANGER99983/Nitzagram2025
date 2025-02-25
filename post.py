@@ -35,8 +35,7 @@ class ImagePost(Post):
         self.image = pygame.image.load(image_path)
         self.image = pygame.transform.scale(self.image, (POST_WIDTH, POST_HEIGHT))
 
-    def display(self, screen, post):
-        screen.blit(post, (POST_X_POS, POST_Y_POS))
+    def display(self, screen, **kwargs):
         super().display(screen, self.image)
 
 

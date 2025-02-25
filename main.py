@@ -1,7 +1,7 @@
 import pygame
 from helpers import screen
 from constants import WINDOW_WIDTH, WINDOW_HEIGHT, BLACK, POST_WIDTH, POST_HEIGHT
-
+from post import *
 
 def main():
     # Set up the game display, clock and headline
@@ -17,6 +17,7 @@ def main():
     background = pygame.transform.scale(background,
                                         (WINDOW_WIDTH, WINDOW_HEIGHT))
 
+    ronaldo = ImagePost("Daniel", "Israel", "SUIIIII", "images/ronaldo.jpg")
 
     running = True
     while running:
@@ -29,6 +30,7 @@ def main():
         # Display the background, presented Image, likes, comments, tags and location(on the Image)
         screen.fill(BLACK)
         screen.blit(background, (0, 0))
+        ronaldo.display(screen)
 
         # Update display - without input update everything
         pygame.display.update()
