@@ -1,6 +1,6 @@
 import pygame
 from helpers import screen
-from constants import WINDOW_WIDTH, WINDOW_HEIGHT, BLACK
+from constants import WINDOW_WIDTH, WINDOW_HEIGHT, BLACK, POST_WIDTH, POST_HEIGHT
 
 
 def main():
@@ -17,7 +17,6 @@ def main():
     background = pygame.transform.scale(background,
                                         (WINDOW_WIDTH, WINDOW_HEIGHT))
 
-    # TODO: add a post here
 
     running = True
     while running:

@@ -28,3 +28,29 @@ class Post:
         screen.blit(self.username_text, (USER_NAME_X_POS, USER_NAME_Y_POS))
         screen.blit(self.location_text, (LOCATION_TEXT_X_POS, LOCATION_TEXT_Y_POS))
         screen.blit(self.description_text, (DESCRIPTION_TEXT_X_POS, DESCRIPTION_TEXT_Y_POS))
+
+class ImagePost(Post):
+    def __init__(self, username, location, description, image_path):
+        super().__init__(username, location, description)
+        self.image = pygame.image.load(image_path)
+        self.image = pygame.transform.scale(self.image, (POST_WIDTH, POST_HEIGHT))
+
+    def display(self, screen, post):
+        screen.blit(post, (POST_X_POS, POST_Y_POS))
+        super().display(screen, self.image)
+
+
+class TextPost(Post):
+    def __init__(self, username, location, description, text_content):
+        super().__init__(username, location, description)
+        self.text_content = text_content
+
+    def display(self, screen, post):
+        font = pygame.font.SysFont('Arial', 24)
+        text_content_render = font.render(self.text_content, True, "black")
+        screen.blit(text_content_render, (LOCATION_TEXT_X_POS, LOCATION_TEXT_Y_POS))
+
+        super().display(screen, post)
+
+
+
