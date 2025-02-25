@@ -18,6 +18,7 @@ def main():
                                         (WINDOW_WIDTH, WINDOW_HEIGHT))
 
     ronaldo = ImagePost("Daniel", "Israel", "SUIIIII", "images/ronaldo.jpg")
+    goals = TextPost("Daniel", "Israel", "I scored 5 times", "I AM THE STORM THAT IS APPROACHING")
 
     running = True
     while running:
@@ -30,7 +31,7 @@ def main():
         # Display the background, presented Image, likes, comments, tags and location(on the Image)
         screen.fill(BLACK)
         screen.blit(background, (0, 0))
-        ronaldo.display(screen)
+        goals.display(screen, "red", "blue")
 
         # Update display - without input update everything
         pygame.display.update()
